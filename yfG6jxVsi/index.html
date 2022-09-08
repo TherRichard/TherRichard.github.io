@@ -1,0 +1,309 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>biliup | Apfel</title>
+<link rel="shortcut icon" href="http://TherRichard.github.io/favicon.ico?v=1662623717897">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="http://TherRichard.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="biliup | Apfel - Atom Feed" href="http://TherRichard.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="https://biliup.github.io/biliup/Guide-linux.html
+第一步：安装python3-dev
+sudo apt install python3-dev
+第二步：安装ffmpeg
+sudo apt in..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="http://TherRichard.github.io">
+  <img class="avatar" src="http://TherRichard.github.io/images/avatar.png?v=1662623717897" alt="">
+  </a>
+  <h1 class="site-title">
+    Apfel
+  </h1>
+  <p class="site-description">
+    泥菩萨过不了江。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          No.1
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          Archive
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          Label
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          About
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              biliup
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-09-07
+              </span>
+              <span>
+                6 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>https://biliup.github.io/biliup/Guide-linux.html</p>
+<p>第一步：安装python3-dev<br>
+sudo apt install python3-dev</p>
+<p>第二步：安装ffmpeg<br>
+sudo apt install ffmpeg</p>
+<p>第三步：安装nodejs<br>
+sudo apt install nodejs</p>
+<p>第四步：安装biliup<br>
+sudo pip3 install biliup</p>
+<p>第五步：在保存文件的目录下创建配置文件<br>
+sudo touch /data/biliup/config.yaml<br>
+使用vi命令编辑文件<br>
+sudo vi /data/biliup/config.yaml<br>
+将文章末尾的配置文件示例粘贴进并修改即可</p>
+<p>第六步：运行biliup<br>
+运行biliup需要进入到有配置文件的目录下执行否则会报错找不到配置文件<br>
+cd /data/biliup<br>
+biliup start #以后台模式运行<br>
+biliup stop #结束biliup进程<br>
+biliup restart #重启biliup进程</p>
+<p>第一步：安装python3.8.10<br>
+sudo apt install -y python3.8<br>
+python3 -V #查看pyth#on版本号看是否是3.8.10或以上的版本</p>
+<p>第二步：安装pip 20<br>
+sudo apt install -y python3-pip<br>
+pip3 -V #查看pip版本号与关联的python版本是否是第一步所安装的</p>
+<p>第三步：安装python3-dev<br>
+sudo apt install -y python3-dev<br>
+apt list|grep python3-dev #查看软件列表并过滤出包含python3-dev的软件包，<br>
+软件包最后面如果有显示 [installed] 或 [installed,automatic] 则表示该软件已经安装</p>
+<p>第四步：安装ffmpeg<br>
+sudo apt install -y ffmpeg<br>
+ffmpeg -version #查看是否正常安装ffpemg并列出版本号</p>
+<p>第五步：下载biliup并安装<br>
+前往https://github.com/ForgQi/biliup/releases 查看最新的版本并右键“复制链接”<br>
+例如：wget https://github.com/ForgQi/biliup/archive/refs/tags/v0.1.9.tar.gz</p>
+<p>ls 查看下载的文件名称<br>
+sudo tar -xvf v0.1.9.tar.gz 解压下载好的文件v0.1.9到当前目录<br>
+如果下载的是 .zip文件 则使用 sudo unzip v0.1.9.zip 解压到当前目录<br>
+cd biliup-0.1.9 使用cd命令进入当前目录下的biliup-0.1.9文件夹<br>
+sudo pip3 install -e . 在biliup文件内使用该命令来安装biliup，注意后面有个英文的点“.”<br>
+注意查看安装过程中是否有报错，如果出现下图的错误先检查pip3安装的urllib3、requests版本</p>
+<p>pip3 list | grep urllib3 #查看pip3安装的软件列表并过滤列出包含urllib3的软件<br>
+pip3 list | grep requests #查看pip3安装的软件列表并过滤出包含requests的软件<br>
+如果urllib3版本低于1.26则进行升级，requests版本低于2.26也同样进行升级<br>
+sudo pip3 install --upgrade urllib3 #升级urllib3版本<br>
+sudo pip3 install --upgrade requests #升级requests版本<br>
+sudo pip3 install -e .  #再次执行安装程序，如果没有报错则进行下一步</p>
+<p>第六步：安装quickjs<br>
+#使用pip3安装quickjs<br>
+sudo pip3 install quickjs<br>
+#查看是否安装成功，如有有列出软件名跟版本号则表示安装成功<br>
+pip3 list | grep quickjs</p>
+<p>如果安装报错请检查是否安装了python3-dev 或者python-dev，如果你使用的是python3则需要安装python3-dev，python则安装python-dev，这里建议使用版本较高的python3</p>
+<p>完成以上六个步骤则可以使用biliup进行录制了，biliup的配置文件参考文件夹内的config(dome).yaml，使用biliup start前请确保在执行命令的目录下存在config.yaml配置文件，且配置内容正确，否则会出现报错，yaml文件对空格比较敏感请仔细查看config(dome).yaml文件内的配置信息。</p>
+<p>#biliup常用命令</p>
+<h1 id="启动">启动</h1>
+<p>$ python3 -m biliup start</p>
+<h1 id="退出">退出</h1>
+<p>$ python3 -m biliup stop</p>
+<h1 id="重启">重启</h1>
+<p>$ python3 -m biliup restart</p>
+<h1 id="查看版本">查看版本</h1>
+<p>$ python3 -m biliup --version</p>
+<h1 id="显示帮助以查看更多选项">显示帮助以查看更多选项</h1>
+<p>$ python3 -m biliup -h</p>
+<p>常见问题可参考本站常见问题汇总，或者参考github wiki</p>
+<p>#config.yaml配置文件示例<br>
+user: # 在填了cookies的情况下优先使用cookies上传，如需使用用户名密码上传请注释掉cookies</p>
+<h1 id="cookies">cookies:</h1>
+<h1 id="sessdata-your-sessdata">SESSDATA: your SESSDATA</h1>
+<h1 id="bili_jct-your-bili_jct">bili_jct: your bili_jct</h1>
+<h1 id="dedeuserid__ckmd5-your-ckmd5">DedeUserID__ckMd5: your ckMd5</h1>
+<h1 id="dedeuserid-your-dedeuserid">DedeUserID: your DedeUserID</h1>
+<h1 id="access_token-your-access_key">access_token: your access_key</h1>
+<pre><code>account:
+    username: your usrname
+    password: your password
+</code></pre>
+<h1 id="app_key-bca7e84c2d947ac6-若账号密码方式无法登录可尝试更改此值">app_key: bca7e84c2d947ac6 # 若账号密码方式无法登录可尝试更改此值</h1>
+<h1 id="appsec-60698ba2f68e01ce44738920a0ffe768-值可以参考-httpsgithubcomsocialsisteryibilibili-api-collectblobmasterotherapi_authmd">appsec: 60698ba2f68e01ce44738920a0ffe768 # 值可以参考 https://github.com/SocialSisterYi/bilibili-API-collect/blob/master/other/API_auth.md</h1>
+<h1 id="b站上传线路选择默认为自动模式目前可手动切换为bda2-kodo-ws-qn">b站上传线路选择，默认为自动模式，目前可手动切换为bda2, kodo, ws, qn</h1>
+<p>lines: AUTO</p>
+<h1 id="b站提交接口默认自动选择可选webclient">b站提交接口，默认自动选择，可选web，client</h1>
+<p>#submit_api: client</p>
+<h1 id="单文件并发上传数未达到带宽上限时增大此值可提高上传速度">单文件并发上传数，未达到带宽上限时增大此值可提高上传速度</h1>
+<p>threads: 3</p>
+<h1 id="录像单文件大小限制单位byte超过此大小分段下载">录像单文件大小限制，单位Byte，超过此大小分段下载</h1>
+<p>file_size: 2621440000</p>
+<h1 id="录像单文件时间限制格式000000时分秒超过此大小分段下载如需使用大小分段请注释此字段">录像单文件时间限制，格式'00:00:00'（时分秒），超过此大小分段下载，如需使用大小分段请注释此字段</h1>
+<p>#segment_time: '00:50:00'<br>
+#douyucdn: tct-h5</p>
+<h1 id="如遇到斗鱼录制卡顿可以尝试切换线路tct-h5备用线路5ali-h5备用线路6akm-h5主线路1">如遇到斗鱼录制卡顿可以尝试切换线路，tct-h5（备用线路5），ali-h5（备用线路6），akm-h5（主线路1）</h1>
+<p>#huyacdn: AL</p>
+<h1 id="如遇到虎牙录制卡顿可以尝试切换线路al阿里bd百度tx腾讯">如遇到虎牙录制卡顿可以尝试切换线路，AL（阿里），BD（百度），TX（腾讯）</h1>
+<p>streamers:<br>
+星际2Stats拔本神族天梯第一视角: # 最小配置示例<br>
+url:<br>
+- https://www.twitch.tv/kimdaeyeob3<br>
+星际2INnoVation吕布卫星人族天梯第一视角: # 完整可选配置示例<br>
+url:<br>
+- https://www.twitch.tv/innovation_s2<br>
+- https://www.panda.tv/1160340<br>
+title: &quot;星际2INnoVation吕布卫星人族天梯第一视角%Y-%m-%d&quot; # 自定义标题的时间格式<br>
+tid: 171 # 投稿分区码,174为生活，其他分区<br>
+copyright: 2 # 1为自制<br>
+cover_path: /cover/up.jpg #设置视频封面<br>
+description: 视频简介<br>
+postprocessor: # 上传完成后，将按自定义顺序执行自定义操作<br>
+- run: echo hello! # 执行任意命令，等同于在shell中运行,视频文件路径作为标准输入传入<br>
+- mv: backup/ # 移动文件到backup目录下<br>
+#- rm # 删除文件，为默认操作<br>
+tags:<br>
+- 星际争霸2<br>
+- 电子竞技<br>
+format: mp4 # 视频保存格式<br>
+opt_args: # ffmpeg参数<br>
+- '-ss' # 跳过开始的16秒<br>
+- '00:00:16'</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E5%90%AF%E5%8A%A8">启动</a></li>
+<li><a href="#%E9%80%80%E5%87%BA">退出</a></li>
+<li><a href="#%E9%87%8D%E5%90%AF">重启</a></li>
+<li><a href="#%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC">查看版本</a></li>
+<li><a href="#%E6%98%BE%E7%A4%BA%E5%B8%AE%E5%8A%A9%E4%BB%A5%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A%E9%80%89%E9%A1%B9">显示帮助以查看更多选项</a></li>
+<li><a href="#cookies">cookies:</a></li>
+<li><a href="#sessdata-your-sessdata">SESSDATA: your SESSDATA</a></li>
+<li><a href="#bili_jct-your-bili_jct">bili_jct: your bili_jct</a></li>
+<li><a href="#dedeuserid__ckmd5-your-ckmd5">DedeUserID__ckMd5: your ckMd5</a></li>
+<li><a href="#dedeuserid-your-dedeuserid">DedeUserID: your DedeUserID</a></li>
+<li><a href="#access_token-your-access_key">access_token: your access_key</a></li>
+<li><a href="#app_key-bca7e84c2d947ac6-%E8%8B%A5%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81%E6%96%B9%E5%BC%8F%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95%E5%8F%AF%E5%B0%9D%E8%AF%95%E6%9B%B4%E6%94%B9%E6%AD%A4%E5%80%BC">app_key: bca7e84c2d947ac6 # 若账号密码方式无法登录可尝试更改此值</a></li>
+<li><a href="#appsec-60698ba2f68e01ce44738920a0ffe768-%E5%80%BC%E5%8F%AF%E4%BB%A5%E5%8F%82%E8%80%83-httpsgithubcomsocialsisteryibilibili-api-collectblobmasterotherapi_authmd">appsec: 60698ba2f68e01ce44738920a0ffe768 # 值可以参考 https://github.com/SocialSisterYi/bilibili-API-collect/blob/master/other/API_auth.md</a></li>
+<li><a href="#b%E7%AB%99%E4%B8%8A%E4%BC%A0%E7%BA%BF%E8%B7%AF%E9%80%89%E6%8B%A9%E9%BB%98%E8%AE%A4%E4%B8%BA%E8%87%AA%E5%8A%A8%E6%A8%A1%E5%BC%8F%E7%9B%AE%E5%89%8D%E5%8F%AF%E6%89%8B%E5%8A%A8%E5%88%87%E6%8D%A2%E4%B8%BAbda2-kodo-ws-qn">b站上传线路选择，默认为自动模式，目前可手动切换为bda2, kodo, ws, qn</a></li>
+<li><a href="#b%E7%AB%99%E6%8F%90%E4%BA%A4%E6%8E%A5%E5%8F%A3%E9%BB%98%E8%AE%A4%E8%87%AA%E5%8A%A8%E9%80%89%E6%8B%A9%E5%8F%AF%E9%80%89webclient">b站提交接口，默认自动选择，可选web，client</a></li>
+<li><a href="#%E5%8D%95%E6%96%87%E4%BB%B6%E5%B9%B6%E5%8F%91%E4%B8%8A%E4%BC%A0%E6%95%B0%E6%9C%AA%E8%BE%BE%E5%88%B0%E5%B8%A6%E5%AE%BD%E4%B8%8A%E9%99%90%E6%97%B6%E5%A2%9E%E5%A4%A7%E6%AD%A4%E5%80%BC%E5%8F%AF%E6%8F%90%E9%AB%98%E4%B8%8A%E4%BC%A0%E9%80%9F%E5%BA%A6">单文件并发上传数，未达到带宽上限时增大此值可提高上传速度</a></li>
+<li><a href="#%E5%BD%95%E5%83%8F%E5%8D%95%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%8D%95%E4%BD%8Dbyte%E8%B6%85%E8%BF%87%E6%AD%A4%E5%A4%A7%E5%B0%8F%E5%88%86%E6%AE%B5%E4%B8%8B%E8%BD%BD">录像单文件大小限制，单位Byte，超过此大小分段下载</a></li>
+<li><a href="#%E5%BD%95%E5%83%8F%E5%8D%95%E6%96%87%E4%BB%B6%E6%97%B6%E9%97%B4%E9%99%90%E5%88%B6%E6%A0%BC%E5%BC%8F000000%E6%97%B6%E5%88%86%E7%A7%92%E8%B6%85%E8%BF%87%E6%AD%A4%E5%A4%A7%E5%B0%8F%E5%88%86%E6%AE%B5%E4%B8%8B%E8%BD%BD%E5%A6%82%E9%9C%80%E4%BD%BF%E7%94%A8%E5%A4%A7%E5%B0%8F%E5%88%86%E6%AE%B5%E8%AF%B7%E6%B3%A8%E9%87%8A%E6%AD%A4%E5%AD%97%E6%AE%B5">录像单文件时间限制，格式'00:00:00'（时分秒），超过此大小分段下载，如需使用大小分段请注释此字段</a></li>
+<li><a href="#%E5%A6%82%E9%81%87%E5%88%B0%E6%96%97%E9%B1%BC%E5%BD%95%E5%88%B6%E5%8D%A1%E9%A1%BF%E5%8F%AF%E4%BB%A5%E5%B0%9D%E8%AF%95%E5%88%87%E6%8D%A2%E7%BA%BF%E8%B7%AFtct-h5%E5%A4%87%E7%94%A8%E7%BA%BF%E8%B7%AF5ali-h5%E5%A4%87%E7%94%A8%E7%BA%BF%E8%B7%AF6akm-h5%E4%B8%BB%E7%BA%BF%E8%B7%AF1">如遇到斗鱼录制卡顿可以尝试切换线路，tct-h5（备用线路5），ali-h5（备用线路6），akm-h5（主线路1）</a></li>
+<li><a href="#%E5%A6%82%E9%81%87%E5%88%B0%E8%99%8E%E7%89%99%E5%BD%95%E5%88%B6%E5%8D%A1%E9%A1%BF%E5%8F%AF%E4%BB%A5%E5%B0%9D%E8%AF%95%E5%88%87%E6%8D%A2%E7%BA%BF%E8%B7%AFal%E9%98%BF%E9%87%8Cbd%E7%99%BE%E5%BA%A6tx%E8%85%BE%E8%AE%AF">如遇到虎牙录制卡顿可以尝试切换线路，AL（阿里），BD（百度），TX（腾讯）</a></li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="http://TherRichard.github.io/yFQW7VKzE/">
+              <h3 class="post-title">
+                我的博客 Love.181613.xyz
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Apfel</a>
+  <a class="rss" href="http://TherRichard.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

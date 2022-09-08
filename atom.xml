@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://TherRichard.github.io</id>
+    <title>Apfel</title>
+    <updated>2022-09-08T07:55:20.245Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="http://TherRichard.github.io"/>
+    <link rel="self" href="http://TherRichard.github.io/atom.xml"/>
+    <subtitle>泥菩萨过不了江。</subtitle>
+    <logo>http://TherRichard.github.io/images/avatar.png</logo>
+    <icon>http://TherRichard.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, Apfel</rights>
+    <entry>
+        <title type="html"><![CDATA[查看进程]]></title>
+        <id>http://TherRichard.github.io/hI10mkcj2/</id>
+        <link href="http://TherRichard.github.io/hI10mkcj2/">
+        </link>
+        <updated>2022-09-08T07:55:06.000Z</updated>
+        <content type="html"><![CDATA[<p>netstat -atunlp</p>
+<p>lsof</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Trojan 开机自启]]></title>
+        <id>http://TherRichard.github.io/wFnwFvcXD/</id>
+        <link href="http://TherRichard.github.io/wFnwFvcXD/">
+        </link>
+        <updated>2022-09-08T07:51:25.000Z</updated>
+        <content type="html"><![CDATA[<p>vi /etc/systemd/system/trojan-go.service<br>
+守护进程脚本 /etc/systemd/system/trojan-go.service</p>
+<p>【<br>
+[Unit]<br>
+Description=Trojan-Go - An unidentifiable mechanism that helps you bypass GFW<br>
+Documentation=https://p4gefau1t.github.io/trojan-go/<br>
+After=network.target nss-lookup.target</p>
+<p>[Service]<br>
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE<br>
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE<br>
+NoNewPrivileges=true<br>
+ExecStart=/usr/local/bin/trojan-go/trojan-go -config /usr/local/etc/trojan-go/config.json<br>
+Restart=on-failure<br>
+RestartSec=10s<br>
+LimitNOFILE=infinity</p>
+<p>[Install]<br>
+WantedBy=multi-user.target<br>
+】</p>
+<p>systemctl enable trojan-go</p>
+<p>systemctl start trojan-go</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[biliup]]></title>
+        <id>http://TherRichard.github.io/yfG6jxVsi/</id>
+        <link href="http://TherRichard.github.io/yfG6jxVsi/">
+        </link>
+        <updated>2022-09-07T07:18:46.000Z</updated>
+        <content type="html"><![CDATA[<p>https://biliup.github.io/biliup/Guide-linux.html</p>
+<p>第一步：安装python3-dev<br>
+sudo apt install python3-dev</p>
+<p>第二步：安装ffmpeg<br>
+sudo apt install ffmpeg</p>
+<p>第三步：安装nodejs<br>
+sudo apt install nodejs</p>
+<p>第四步：安装biliup<br>
+sudo pip3 install biliup</p>
+<p>第五步：在保存文件的目录下创建配置文件<br>
+sudo touch /data/biliup/config.yaml<br>
+使用vi命令编辑文件<br>
+sudo vi /data/biliup/config.yaml<br>
+将文章末尾的配置文件示例粘贴进并修改即可</p>
+<p>第六步：运行biliup<br>
+运行biliup需要进入到有配置文件的目录下执行否则会报错找不到配置文件<br>
+cd /data/biliup<br>
+biliup start #以后台模式运行<br>
+biliup stop #结束biliup进程<br>
+biliup restart #重启biliup进程</p>
+<p>第一步：安装python3.8.10<br>
+sudo apt install -y python3.8<br>
+python3 -V #查看pyth#on版本号看是否是3.8.10或以上的版本</p>
+<p>第二步：安装pip 20<br>
+sudo apt install -y python3-pip<br>
+pip3 -V #查看pip版本号与关联的python版本是否是第一步所安装的</p>
+<p>第三步：安装python3-dev<br>
+sudo apt install -y python3-dev<br>
+apt list|grep python3-dev #查看软件列表并过滤出包含python3-dev的软件包，<br>
+软件包最后面如果有显示 [installed] 或 [installed,automatic] 则表示该软件已经安装</p>
+<p>第四步：安装ffmpeg<br>
+sudo apt install -y ffmpeg<br>
+ffmpeg -version #查看是否正常安装ffpemg并列出版本号</p>
+<p>第五步：下载biliup并安装<br>
+前往https://github.com/ForgQi/biliup/releases 查看最新的版本并右键“复制链接”<br>
+例如：wget https://github.com/ForgQi/biliup/archive/refs/tags/v0.1.9.tar.gz</p>
+<p>ls 查看下载的文件名称<br>
+sudo tar -xvf v0.1.9.tar.gz 解压下载好的文件v0.1.9到当前目录<br>
+如果下载的是 .zip文件 则使用 sudo unzip v0.1.9.zip 解压到当前目录<br>
+cd biliup-0.1.9 使用cd命令进入当前目录下的biliup-0.1.9文件夹<br>
+sudo pip3 install -e . 在biliup文件内使用该命令来安装biliup，注意后面有个英文的点“.”<br>
+注意查看安装过程中是否有报错，如果出现下图的错误先检查pip3安装的urllib3、requests版本</p>
+<p>pip3 list | grep urllib3 #查看pip3安装的软件列表并过滤列出包含urllib3的软件<br>
+pip3 list | grep requests #查看pip3安装的软件列表并过滤出包含requests的软件<br>
+如果urllib3版本低于1.26则进行升级，requests版本低于2.26也同样进行升级<br>
+sudo pip3 install --upgrade urllib3 #升级urllib3版本<br>
+sudo pip3 install --upgrade requests #升级requests版本<br>
+sudo pip3 install -e .  #再次执行安装程序，如果没有报错则进行下一步</p>
+<p>第六步：安装quickjs<br>
+#使用pip3安装quickjs<br>
+sudo pip3 install quickjs<br>
+#查看是否安装成功，如有有列出软件名跟版本号则表示安装成功<br>
+pip3 list | grep quickjs</p>
+<p>如果安装报错请检查是否安装了python3-dev 或者python-dev，如果你使用的是python3则需要安装python3-dev，python则安装python-dev，这里建议使用版本较高的python3</p>
+<p>完成以上六个步骤则可以使用biliup进行录制了，biliup的配置文件参考文件夹内的config(dome).yaml，使用biliup start前请确保在执行命令的目录下存在config.yaml配置文件，且配置内容正确，否则会出现报错，yaml文件对空格比较敏感请仔细查看config(dome).yaml文件内的配置信息。</p>
+<p>#biliup常用命令</p>
+<h1 id="启动">启动</h1>
+<p>$ python3 -m biliup start</p>
+<h1 id="退出">退出</h1>
+<p>$ python3 -m biliup stop</p>
+<h1 id="重启">重启</h1>
+<p>$ python3 -m biliup restart</p>
+<h1 id="查看版本">查看版本</h1>
+<p>$ python3 -m biliup --version</p>
+<h1 id="显示帮助以查看更多选项">显示帮助以查看更多选项</h1>
+<p>$ python3 -m biliup -h</p>
+<p>常见问题可参考本站常见问题汇总，或者参考github wiki</p>
+<p>#config.yaml配置文件示例<br>
+user: # 在填了cookies的情况下优先使用cookies上传，如需使用用户名密码上传请注释掉cookies</p>
+<h1 id="cookies">cookies:</h1>
+<h1 id="sessdata-your-sessdata">SESSDATA: your SESSDATA</h1>
+<h1 id="bili_jct-your-bili_jct">bili_jct: your bili_jct</h1>
+<h1 id="dedeuserid__ckmd5-your-ckmd5">DedeUserID__ckMd5: your ckMd5</h1>
+<h1 id="dedeuserid-your-dedeuserid">DedeUserID: your DedeUserID</h1>
+<h1 id="access_token-your-access_key">access_token: your access_key</h1>
+<pre><code>account:
+    username: your usrname
+    password: your password
+</code></pre>
+<h1 id="app_key-bca7e84c2d947ac6-若账号密码方式无法登录可尝试更改此值">app_key: bca7e84c2d947ac6 # 若账号密码方式无法登录可尝试更改此值</h1>
+<h1 id="appsec-60698ba2f68e01ce44738920a0ffe768-值可以参考-httpsgithubcomsocialsisteryibilibili-api-collectblobmasterotherapi_authmd">appsec: 60698ba2f68e01ce44738920a0ffe768 # 值可以参考 https://github.com/SocialSisterYi/bilibili-API-collect/blob/master/other/API_auth.md</h1>
+<h1 id="b站上传线路选择默认为自动模式目前可手动切换为bda2-kodo-ws-qn">b站上传线路选择，默认为自动模式，目前可手动切换为bda2, kodo, ws, qn</h1>
+<p>lines: AUTO</p>
+<h1 id="b站提交接口默认自动选择可选webclient">b站提交接口，默认自动选择，可选web，client</h1>
+<p>#submit_api: client</p>
+<h1 id="单文件并发上传数未达到带宽上限时增大此值可提高上传速度">单文件并发上传数，未达到带宽上限时增大此值可提高上传速度</h1>
+<p>threads: 3</p>
+<h1 id="录像单文件大小限制单位byte超过此大小分段下载">录像单文件大小限制，单位Byte，超过此大小分段下载</h1>
+<p>file_size: 2621440000</p>
+<h1 id="录像单文件时间限制格式000000时分秒超过此大小分段下载如需使用大小分段请注释此字段">录像单文件时间限制，格式'00:00:00'（时分秒），超过此大小分段下载，如需使用大小分段请注释此字段</h1>
+<p>#segment_time: '00:50:00'<br>
+#douyucdn: tct-h5</p>
+<h1 id="如遇到斗鱼录制卡顿可以尝试切换线路tct-h5备用线路5ali-h5备用线路6akm-h5主线路1">如遇到斗鱼录制卡顿可以尝试切换线路，tct-h5（备用线路5），ali-h5（备用线路6），akm-h5（主线路1）</h1>
+<p>#huyacdn: AL</p>
+<h1 id="如遇到虎牙录制卡顿可以尝试切换线路al阿里bd百度tx腾讯">如遇到虎牙录制卡顿可以尝试切换线路，AL（阿里），BD（百度），TX（腾讯）</h1>
+<p>streamers:<br>
+星际2Stats拔本神族天梯第一视角: # 最小配置示例<br>
+url:<br>
+- https://www.twitch.tv/kimdaeyeob3<br>
+星际2INnoVation吕布卫星人族天梯第一视角: # 完整可选配置示例<br>
+url:<br>
+- https://www.twitch.tv/innovation_s2<br>
+- https://www.panda.tv/1160340<br>
+title: &quot;星际2INnoVation吕布卫星人族天梯第一视角%Y-%m-%d&quot; # 自定义标题的时间格式<br>
+tid: 171 # 投稿分区码,174为生活，其他分区<br>
+copyright: 2 # 1为自制<br>
+cover_path: /cover/up.jpg #设置视频封面<br>
+description: 视频简介<br>
+postprocessor: # 上传完成后，将按自定义顺序执行自定义操作<br>
+- run: echo hello! # 执行任意命令，等同于在shell中运行,视频文件路径作为标准输入传入<br>
+- mv: backup/ # 移动文件到backup目录下<br>
+#- rm # 删除文件，为默认操作<br>
+tags:<br>
+- 星际争霸2<br>
+- 电子竞技<br>
+format: mp4 # 视频保存格式<br>
+opt_args: # ffmpeg参数<br>
+- '-ss' # 跳过开始的16秒<br>
+- '00:00:16'</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[我的博客 Love.181613.xyz]]></title>
+        <id>http://TherRichard.github.io/yFQW7VKzE/</id>
+        <link href="http://TherRichard.github.io/yFQW7VKzE/">
+        </link>
+        <updated>2022-09-05T10:43:11.000Z</updated>
+        <content type="html"><![CDATA[<p>博客要有爱</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Go语言]]></title>
+        <id>http://TherRichard.github.io/OswHpNJxJ/</id>
+        <link href="http://TherRichard.github.io/OswHpNJxJ/">
+        </link>
+        <updated>2022-09-05T10:34:06.000Z</updated>
+        <content type="html"><![CDATA[<p>一、先更新<br>
+apt-get update<br>
+apt-get -y upgrade ####这个应该不用，也能吧<br>
+二、下载Go源码编译<br>
+wget + Go语言官网Linux版本的地址<br>
+tar -xvf go1.9.3.linux-amd64.tar.gz<br>
+mv go /usr/local<br>
+三、设置Go系统环境变量<br>
+export GOROOT=/usr/local/go<br>
+export PATH=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>O</mi><mi>P</mi><mi>A</mi><mi>T</mi><mi>H</mi><mi mathvariant="normal">/</mi><mi>b</mi><mi>i</mi><mi>n</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">GOPATH/bin:</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord">/</span><span class="mord mathdefault">b</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span></span></span>GOROOT/bin:$PATH<br>
+四、此时可以查看是否安装成功<br>
+go version</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Apfel.Alpine]]></title>
+        <id>http://TherRichard.github.io/ezmJtKwi4/</id>
+        <link href="http://TherRichard.github.io/ezmJtKwi4/">
+        </link>
+        <updated>2022-08-31T03:40:31.000Z</updated>
+        <content type="html"><![CDATA[<p>https://runsisi.com/2019/09/07/alpine/</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Apfel.Linux 命令行做 HTTP 接口压测]]></title>
+        <id>http://TherRichard.github.io/NY2EY8x9B/</id>
+        <link href="http://TherRichard.github.io/NY2EY8x9B/">
+        </link>
+        <updated>2022-08-25T11:01:27.000Z</updated>
+        <content type="html"><![CDATA[<p><code>ab</code> 工具（apache/httpd）包的一个工具可以用来做简单 http 接口的压测。简单 demo 如下。</p>
+<p><code>ab -n 100000 -c 200 -p irr.body -T 'multipart/form-data' http://127.0.0.1:8080/solve/equation</code><br>
+具体解释可以直接<code> ab --help</code> 看出来。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Apfel.Arch Linux开启]]></title>
+        <id>http://TherRichard.github.io/wj0taD6d4/</id>
+        <link href="http://TherRichard.github.io/wj0taD6d4/">
+        </link>
+        <updated>2022-08-25T10:43:50.000Z</updated>
+        <content type="html"><![CDATA[<p>Enabling BBR On Arch Linux 5.17.9-arch1-1</p>
+<p><strong>Become Root</strong><br>
+sudo su<br>
+<strong>Set Up sysctl Config File</strong><br>
+echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.d/bbr.conf<br>
+echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.d/bbr.conf<br>
+<strong>Load Module</strong><br>
+modprobe tcp_bbr<br>
+<strong>Load Config From File</strong><br>
+sysctl -p /etc/sysctl.d/bbr.conf<br>
+<strong>Check Running Config</strong><br>
+sysctl net.ipv4.tcp_available_congestion_control<br>
+sysctl net.ipv4.tcp_congestion_control<br>
+<strong>(Optional) Reboot To Make Sure Settings Persisted</strong><br>
+reboot<br>
+<strong>(Optional) Post-Reboot Check Module Is Loaded</strong><br>
+lsmod | grep bbr</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Apfel.Arch Linux User]]></title>
+        <id>http://TherRichard.github.io/hello-gridea/</id>
+        <link href="http://TherRichard.github.io/hello-gridea/">
+        </link>
+        <updated>2022-08-24T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Arch Linux</strong> ！<br>
+✍️  <strong>Arch Linux</strong> 一个独立开发的x86-64通用GNU/Linux发行版，它致力于通过滚动发布来提供大多数软件的最稳定版本。默认安装一个最小的基本系统，由用户配置添加有意需要的内容。Arch Linux使用Pacman作为包管理器。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Arch Linux</strong> ！<br>
+✍️  <strong>Arch Linux</strong> 一个独立开发的x86-64通用GNU/Linux发行版，它致力于通过滚动发布来提供大多数软件的最稳定版本。默认安装一个最小的基本系统，由用户配置添加有意需要的内容。Arch Linux使用Pacman作为包管理器。</p>
+<!-- more -->
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="https://gridea.dev/">Gridea 主页</a><br>
+<a href="https://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Apfel</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+</feed>

@@ -1,0 +1,185 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Apfel.Arch Linux开启 | Apfel</title>
+<link rel="shortcut icon" href="http://TherRichard.github.io/favicon.ico?v=1662623717897">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="http://TherRichard.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Apfel.Arch Linux开启 | Apfel - Atom Feed" href="http://TherRichard.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="Enabling BBR On Arch Linux 5.17.9-arch1-1
+Become Root
+sudo su
+Set Up sysctl Config File
+echo &quot;net.core.default_qdis..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="http://TherRichard.github.io">
+  <img class="avatar" src="http://TherRichard.github.io/images/avatar.png?v=1662623717897" alt="">
+  </a>
+  <h1 class="site-title">
+    Apfel
+  </h1>
+  <p class="site-description">
+    泥菩萨过不了江。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          No.1
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          Archive
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          Label
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          About
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Apfel.Arch Linux开启
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-08-25
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>Enabling BBR On Arch Linux 5.17.9-arch1-1</p>
+<p><strong>Become Root</strong><br>
+sudo su<br>
+<strong>Set Up sysctl Config File</strong><br>
+echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.d/bbr.conf<br>
+echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.d/bbr.conf<br>
+<strong>Load Module</strong><br>
+modprobe tcp_bbr<br>
+<strong>Load Config From File</strong><br>
+sysctl -p /etc/sysctl.d/bbr.conf<br>
+<strong>Check Running Config</strong><br>
+sysctl net.ipv4.tcp_available_congestion_control<br>
+sysctl net.ipv4.tcp_congestion_control<br>
+<strong>(Optional) Reboot To Make Sure Settings Persisted</strong><br>
+reboot<br>
+<strong>(Optional) Post-Reboot Check Module Is Loaded</strong><br>
+lsmod | grep bbr</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="http://TherRichard.github.io/hello-gridea/">
+              <h3 class="post-title">
+                Apfel.Arch Linux User
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Apfel</a>
+  <a class="rss" href="http://TherRichard.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
